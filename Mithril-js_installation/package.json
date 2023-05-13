@@ -1,0 +1,16 @@
+{
+    "name": "mithril-js_installation",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "mithril": "^2.2.2"
+    },
+    "devDependencies": {
+        "vite": "^4.3.5"
+    }
+}
