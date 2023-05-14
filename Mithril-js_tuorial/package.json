@@ -11,6 +11,8 @@
         "mithril": "^2.2.2"
     },
     "devDependencies": {
+        "@types/mithril": "^2.0.12",
+        "typescript": "^5.0.4",
         "vite": "^4.3.5"
     }
 }
