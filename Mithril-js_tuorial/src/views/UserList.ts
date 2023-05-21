@@ -10,7 +10,14 @@ const UserList: m.Component = {
       ".user-list",
       User.userList.map(function (u: UserData) {
         console.log("u", u);
-        return m(".user-list-item", u.firstName + " " + u.lastName);
+        return m(
+          m.route.Link,
+          {
+            class: "user-list-item",
+            href: "/edit/" + u.id,
+          },
+          u.firstName + " " + u.lastName
+        );
       })
     );
   },

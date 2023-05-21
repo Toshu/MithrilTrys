@@ -34,6 +34,21 @@ const User = {
     User.userList.push({ id: "3", firstName: "fn003", lastName: "003" });
     User.userList.push({ id: "4", firstName: "fn004", lastName: "004" });
   },
+
+  current: {} as UserData | undefined,
+  load: function (id: string) {
+    // return m
+    //   .request({
+    //     method: "GET",
+    //     url: "https://rem-rest-api.herokuapp.com/api/users/" + id,
+    //     withCredentials: true,
+    //   })
+    //   .then(function (result) {
+    //     User.current = result as UserData;
+    //   });
+
+    User.current = User.userList.find((u) => u.id === id);
+  },
 };
 
 export { User, UserData };
