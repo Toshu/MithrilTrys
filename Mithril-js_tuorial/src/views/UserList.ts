@@ -1,26 +1,19 @@
 import m from "mithril";
 import { User, UserData } from "../models/User";
 
-class UserList implements m.Component {
-  private user: User;
+const UserList: m.Component = {
+  oninit: User.loadList,
 
-  constructor(user: User) {
-    this.user = user;
-    this.user.loadList();
-  }
-
-  view = () => {
+  view: () => {
     console.log("view");
     return m(
       ".user-list",
-      this.user.users.map(function (u: UserData) {
+      User.userList.map(function (u: UserData) {
         console.log("u", u);
         return m(".user-list-item", u.firstName + " " + u.lastName);
       })
     );
-  };
-
-  //   oninit = this.user.loadList;
-}
+  },
+};
 
 export default UserList;

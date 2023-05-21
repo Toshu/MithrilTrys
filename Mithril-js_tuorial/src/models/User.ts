@@ -13,17 +13,12 @@ interface UserData {
   lastName: String;
 }
 
-class User {
-  private userlist: UserData[] = [] as UserData[];
+const User = {
+  userList: [] as UserData[],
 
-  constructor() {}
+  loadList: () => {
+    console.log("lodaList");
 
-  get users(): UserData[] {
-    return this.userlist;
-  }
-
-  loadList = () => {
-    // console.log("lodaList");
     // return m
     //   .request({
     //     method: "GET",
@@ -31,15 +26,14 @@ class User {
     //     withCredentials: true,
     //   })
     //   .then((result) => {
-    //     this.userlist = (result as UserAPI).data;
+    //     User.userList = (result as UserAPI).data;
     //   });
 
-    //users = [];
-    this.userlist.push({ id: "1", firstName: "fn001", lastName: "001" });
-    this.userlist.push({ id: "2", firstName: "fn002", lastName: "002" });
-    this.userlist.push({ id: "3", firstName: "fn003", lastName: "003" });
-    this.userlist.push({ id: "4", firstName: "fn004", lastName: "004" });
-  };
-}
+    User.userList.push({ id: "1", firstName: "fn001", lastName: "001" });
+    User.userList.push({ id: "2", firstName: "fn002", lastName: "002" });
+    User.userList.push({ id: "3", firstName: "fn003", lastName: "003" });
+    User.userList.push({ id: "4", firstName: "fn004", lastName: "004" });
+  },
+};
 
 export { User, UserData };
