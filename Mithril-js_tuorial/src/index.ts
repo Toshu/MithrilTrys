@@ -1,3 +1,6 @@
 import m from "mithril";
 
-m.render(document.body, "hello world");
+import { User } from "./models/User";
+import UserList from "./views/UserList";
+
+m.mount(document.body, new UserList(new User()));
